@@ -1,0 +1,129 @@
+{
+  "name": "Modular: Cross-Chain Workflow",
+  "description": "Showcase modularity: Deploy on Monad, swap to Solana, launch on PumpFun, bridge back",
+  "version": "V1.2",
+  "nodeCount": 7,
+  "complexity": "Complex",
+  "nodes": [
+    {
+      "id": "token-info-1",
+      "type": "tokenInfo",
+      "position": { "x": 100, "y": 300 },
+      "data": {
+        "label": "Token Info (Monad)",
+        "config": {
+          "tokenName": "My Token",
+          "tokenSymbol": "MTK",
+          "chain": "monad"
+        }
+      }
+    },
+    {
+      "id": "wallet-injector-1",
+      "type": "walletInjector",
+      "position": { "x": 400, "y": 100 },
+      "data": {
+        "label": "Wallet Injector",
+        "config": {
+          "wallets": [],
+          "chain": "monad"
+        }
+      }
+    },
+    {
+      "id": "deploy-1",
+      "type": "deploy",
+      "position": { "x": 400, "y": 300 },
+      "data": {
+        "label": "Deploy on Monad",
+        "config": {}
+      }
+    },
+    {
+      "id": "add-liquidity-1",
+      "type": "addLiquidity",
+      "position": { "x": 700, "y": 300 },
+      "data": {
+        "label": "Add Liquidity",
+        "config": {}
+      }
+    },
+    {
+      "id": "chain-switch-1",
+      "type": "chainSwitch",
+      "position": { "x": 1000, "y": 200 },
+      "data": {
+        "label": "Switch to Solana",
+        "config": {
+          "targetChain": "solana"
+        }
+      }
+    },
+    {
+      "id": "mayan-swap-1",
+      "type": "simpleMayanSwap",
+      "position": { "x": 1000, "y": 300 },
+      "data": {
+        "label": "Bridge to Solana",
+        "config": {
+          "destinationChain": "solana",
+          "swapPercentage": 100
+        }
+      }
+    },
+    {
+      "id": "pumpfun-launcher-1",
+      "type": "pumpFunLauncher",
+      "position": { "x": 1300, "y": 300 },
+      "data": {
+        "label": "Launch on PumpFun",
+        "config": {}
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "token-info-1",
+      "target": "wallet-injector-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e2",
+      "source": "token-info-1",
+      "target": "deploy-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e3",
+      "source": "wallet-injector-1",
+      "target": "deploy-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e4",
+      "source": "deploy-1",
+      "target": "add-liquidity-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e5",
+      "source": "add-liquidity-1",
+      "target": "chain-switch-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e6",
+      "source": "chain-switch-1",
+      "target": "mayan-swap-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e7",
+      "source": "mayan-swap-1",
+      "target": "pumpfun-launcher-1",
+      "type": "smoothstep"
+    }
+  ],
+  "timestamp": 1732500000000
+}

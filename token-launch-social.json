@@ -1,0 +1,98 @@
+{
+  "name": "Token Launch with Social",
+  "description": "Deploy token and announce on Telegram and Twitter",
+  "version": "V1",
+  "nodeCount": 5,
+  "complexity": "Medium",
+  "nodes": [
+    {
+      "id": "token-info-1",
+      "type": "tokenInfo",
+      "position": { "x": 100, "y": 200 },
+      "data": {
+        "label": "Token Info",
+        "config": {
+          "tokenName": "My Token",
+          "tokenSymbol": "MTK",
+          "chain": "monad"
+        }
+      }
+    },
+    {
+      "id": "wallet-injector-1",
+      "type": "walletInjector",
+      "position": { "x": 400, "y": 100 },
+      "data": {
+        "label": "Wallet Injector",
+        "config": {
+          "wallets": [],
+          "chain": "monad"
+        }
+      }
+    },
+    {
+      "id": "deploy-1",
+      "type": "deploy",
+      "position": { "x": 400, "y": 200 },
+      "data": {
+        "label": "Deploy",
+        "config": {}
+      }
+    },
+    {
+      "id": "telegram-1",
+      "type": "telegram",
+      "position": { "x": 700, "y": 150 },
+      "data": {
+        "label": "Telegram",
+        "config": {
+          "message": "🚀 Token launched! Check it out!"
+        }
+      }
+    },
+    {
+      "id": "twitter-1",
+      "type": "twitter",
+      "position": { "x": 700, "y": 250 },
+      "data": {
+        "label": "Twitter",
+        "config": {
+          "tweet": "🚀 Just launched my token! #Monad #DeFi"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "token-info-1",
+      "target": "wallet-injector-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e2",
+      "source": "token-info-1",
+      "target": "deploy-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e3",
+      "source": "wallet-injector-1",
+      "target": "deploy-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e4",
+      "source": "deploy-1",
+      "target": "telegram-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e5",
+      "source": "deploy-1",
+      "target": "twitter-1",
+      "type": "smoothstep"
+    }
+  ],
+  "timestamp": 1732500000000
+}

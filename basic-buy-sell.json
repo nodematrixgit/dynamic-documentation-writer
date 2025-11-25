@@ -1,0 +1,88 @@
+{
+  "name": "Basic Buy & Sell",
+  "description": "Simple trading flow: Generate wallets, buy tokens, then sell them",
+  "version": "V1",
+  "nodeCount": 5,
+  "complexity": "Simple",
+  "nodes": [
+    {
+      "id": "start-1",
+      "type": "start",
+      "position": { "x": 100, "y": 200 },
+      "data": {
+        "label": "Start",
+        "config": {
+          "countdownSeconds": 5
+        }
+      }
+    },
+    {
+      "id": "wallet-injector-1",
+      "type": "walletInjector",
+      "position": { "x": 400, "y": 100 },
+      "data": {
+        "label": "Wallet Injector",
+        "config": {
+          "wallets": [],
+          "chain": "monad"
+        }
+      }
+    },
+    {
+      "id": "multi-wallet-1",
+      "type": "multiWallet",
+      "position": { "x": 400, "y": 200 },
+      "data": {
+        "label": "Multi Wallet",
+        "config": {
+          "wallets": []
+        }
+      }
+    },
+    {
+      "id": "buy-1",
+      "type": "buy",
+      "position": { "x": 700, "y": 150 },
+      "data": {
+        "label": "Buy",
+        "config": {}
+      }
+    },
+    {
+      "id": "sell-1",
+      "type": "sell",
+      "position": { "x": 700, "y": 250 },
+      "data": {
+        "label": "Sell",
+        "config": {}
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start-1",
+      "target": "wallet-injector-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e2",
+      "source": "wallet-injector-1",
+      "target": "multi-wallet-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e3",
+      "source": "multi-wallet-1",
+      "target": "buy-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e4",
+      "source": "buy-1",
+      "target": "sell-1",
+      "type": "smoothstep"
+    }
+  ],
+  "timestamp": 1732500000000
+}

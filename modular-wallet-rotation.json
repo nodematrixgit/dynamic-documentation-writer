@@ -1,0 +1,94 @@
+{
+  "name": "Modular: Wallet Rotation System",
+  "description": "Showcase modularity: Generate wallets, transfer funds, rotate wallets automatically",
+  "version": "V1",
+  "nodeCount": 5,
+  "complexity": "Medium",
+  "nodes": [
+    {
+      "id": "start-1",
+      "type": "start",
+      "position": { "x": 100, "y": 300 },
+      "data": {
+        "label": "Start",
+        "config": {
+          "countdownSeconds": 3
+        }
+      }
+    },
+    {
+      "id": "wallet-generator-1",
+      "type": "walletGenerator",
+      "position": { "x": 400, "y": 200 },
+      "data": {
+        "label": "Generate Wallets",
+        "config": {
+          "deployerCount": 1,
+          "buyerCount": 3,
+          "injectToRunConfig": true
+        }
+      }
+    },
+    {
+      "id": "wallet-transfer-1",
+      "type": "walletTransfer",
+      "position": { "x": 400, "y": 300 },
+      "data": {
+        "label": "Transfer Funds",
+        "config": {
+          "transferPercentage": 50
+        }
+      }
+    },
+    {
+      "id": "wallet-injector-1",
+      "type": "walletInjector",
+      "position": { "x": 700, "y": 300 },
+      "data": {
+        "label": "Wallet Injector",
+        "config": {
+          "rotateAfterTransfer": true,
+          "newWalletCount": 2
+        }
+      }
+    },
+    {
+      "id": "loop-1",
+      "type": "loop",
+      "position": { "x": 1000, "y": 300 },
+      "data": {
+        "label": "Loop Rotation",
+        "config": {
+          "iterations": 3
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start-1",
+      "target": "wallet-generator-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e2",
+      "source": "wallet-generator-1",
+      "target": "wallet-transfer-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e3",
+      "source": "wallet-transfer-1",
+      "target": "wallet-injector-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e4",
+      "source": "wallet-injector-1",
+      "target": "loop-1",
+      "type": "smoothstep"
+    }
+  ],
+  "timestamp": 1732500000000
+}

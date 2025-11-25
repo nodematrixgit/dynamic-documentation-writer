@@ -1,0 +1,60 @@
+{
+  "name": "Cross-Chain Swap",
+  "description": "Simple cross-chain swap using Mayan Bridge",
+  "version": "V1",
+  "nodeCount": 3,
+  "complexity": "Simple",
+  "nodes": [
+    {
+      "id": "start-1",
+      "type": "start",
+      "position": { "x": 100, "y": 200 },
+      "data": {
+        "label": "Start",
+        "config": {
+          "countdownSeconds": 3
+        }
+      }
+    },
+    {
+      "id": "wallet-injector-1",
+      "type": "walletInjector",
+      "position": { "x": 400, "y": 100 },
+      "data": {
+        "label": "Wallet Injector",
+        "config": {
+          "wallets": [],
+          "chain": "monad"
+        }
+      }
+    },
+    {
+      "id": "mayan-swap-1",
+      "type": "simpleMayanSwap",
+      "position": { "x": 400, "y": 200 },
+      "data": {
+        "label": "Mayan Swap",
+        "config": {
+          "sourceWallets": [],
+          "destinationChain": "solana",
+          "swapPercentage": 100
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start-1",
+      "target": "wallet-injector-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e2",
+      "source": "wallet-injector-1",
+      "target": "mayan-swap-1",
+      "type": "smoothstep"
+    }
+  ],
+  "timestamp": 1732500000000
+}

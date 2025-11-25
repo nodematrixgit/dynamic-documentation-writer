@@ -1,0 +1,79 @@
+{
+  "name": "Simple Token Launch",
+  "description": "Basic token deployment flow: Set token info, deploy contract, and add liquidity",
+  "version": "V1",
+  "nodeCount": 4,
+  "complexity": "Simple",
+  "nodes": [
+    {
+      "id": "token-info-1",
+      "type": "tokenInfo",
+      "position": { "x": 100, "y": 200 },
+      "data": {
+        "label": "Token Info",
+        "config": {
+          "tokenName": "My Token",
+          "tokenSymbol": "MTK",
+          "chain": "monad"
+        }
+      }
+    },
+    {
+      "id": "wallet-injector-1",
+      "type": "walletInjector",
+      "position": { "x": 400, "y": 100 },
+      "data": {
+        "label": "Wallet Injector",
+        "config": {
+          "wallets": [],
+          "chain": "monad"
+        }
+      }
+    },
+    {
+      "id": "deploy-1",
+      "type": "deploy",
+      "position": { "x": 400, "y": 200 },
+      "data": {
+        "label": "Deploy",
+        "config": {}
+      }
+    },
+    {
+      "id": "add-liquidity-1",
+      "type": "addLiquidity",
+      "position": { "x": 700, "y": 200 },
+      "data": {
+        "label": "Add Liquidity",
+        "config": {}
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "token-info-1",
+      "target": "wallet-injector-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e2",
+      "source": "token-info-1",
+      "target": "deploy-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e3",
+      "source": "wallet-injector-1",
+      "target": "deploy-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e4",
+      "source": "deploy-1",
+      "target": "add-liquidity-1",
+      "type": "smoothstep"
+    }
+  ],
+  "timestamp": 1732500000000
+}

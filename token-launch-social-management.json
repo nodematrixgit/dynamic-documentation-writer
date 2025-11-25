@@ -1,0 +1,184 @@
+{
+  "name": "Token Launch with Social Management",
+  "description": "Complete social launch: Generate logo, deploy, create TG group, post announcements, update website",
+  "version": "V1.2",
+  "nodeCount": 9,
+  "complexity": "Complex",
+  "nodes": [
+    {
+      "id": "token-info-1",
+      "type": "tokenInfo",
+      "position": { "x": 100, "y": 300 },
+      "data": {
+        "label": "Token Info",
+        "config": {
+          "tokenName": "My Token",
+          "tokenSymbol": "MTK",
+          "chain": "monad"
+        }
+      }
+    },
+    {
+      "id": "wallet-injector-1",
+      "type": "walletInjector",
+      "position": { "x": 400, "y": 100 },
+      "data": {
+        "label": "Wallet Injector",
+        "config": {
+          "wallets": [],
+          "chain": "monad"
+        }
+      }
+    },
+    {
+      "id": "image-generator-1",
+      "type": "imageGenerator",
+      "position": { "x": 400, "y": 200 },
+      "data": {
+        "label": "Image Generator",
+        "config": {
+          "imageType": "logo",
+          "businessName": "My Token"
+        }
+      }
+    },
+    {
+      "id": "deploy-1",
+      "type": "deploy",
+      "position": { "x": 400, "y": 300 },
+      "data": {
+        "label": "Deploy",
+        "config": {}
+      }
+    },
+    {
+      "id": "add-liquidity-1",
+      "type": "addLiquidity",
+      "position": { "x": 400, "y": 400 },
+      "data": {
+        "label": "Add Liquidity",
+        "config": {}
+      }
+    },
+    {
+      "id": "telegram-group-1",
+      "type": "telegramGroupCreator",
+      "position": { "x": 700, "y": 200 },
+      "data": {
+        "label": "Telegram Group Creator",
+        "config": {
+          "groupName": "My Token Community",
+          "userIds": []
+        }
+      }
+    },
+    {
+      "id": "telegram-1",
+      "type": "telegram",
+      "position": { "x": 700, "y": 300 },
+      "data": {
+        "label": "Telegram Announcement",
+        "config": {
+          "message": "🚀 Token launched! Join our community!"
+        }
+      }
+    },
+    {
+      "id": "twitter-1",
+      "type": "twitter",
+      "position": { "x": 700, "y": 400 },
+      "data": {
+        "label": "Twitter Post",
+        "config": {
+          "tweet": "🚀 Just launched $MTK on Monad! #Monad #DeFi"
+        }
+      }
+    },
+    {
+      "id": "website-config-1",
+      "type": "websiteConfig",
+      "position": { "x": 1000, "y": 300 },
+      "data": {
+        "label": "Website Config",
+        "config": {
+          "vercelSiteUrl": ""
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "token-info-1",
+      "target": "image-generator-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e2",
+      "source": "token-info-1",
+      "target": "wallet-injector-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e3",
+      "source": "token-info-1",
+      "target": "deploy-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e4",
+      "source": "image-generator-1",
+      "target": "deploy-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e5",
+      "source": "wallet-injector-1",
+      "target": "deploy-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e6",
+      "source": "deploy-1",
+      "target": "add-liquidity-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e7",
+      "source": "add-liquidity-1",
+      "target": "telegram-group-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e8",
+      "source": "add-liquidity-1",
+      "target": "telegram-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e9",
+      "source": "add-liquidity-1",
+      "target": "twitter-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e10",
+      "source": "telegram-group-1",
+      "target": "website-config-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e11",
+      "source": "telegram-1",
+      "target": "website-config-1",
+      "type": "smoothstep"
+    },
+    {
+      "id": "e12",
+      "source": "twitter-1",
+      "target": "website-config-1",
+      "type": "smoothstep"
+    }
+  ],
+  "timestamp": 1732500000000
+}
