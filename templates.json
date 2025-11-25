@@ -1,0 +1,325 @@
+{
+  "utility-token": [
+    {
+      "section_key": "overview",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 0,
+      "defaultContent": {
+        "title": "Overview",
+        "description": "Token overview and basic information"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "tokenomics",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 1,
+      "defaultContent": {
+        "title": "Tokenomics",
+        "description": "Token distribution and economics"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "utility",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 2,
+      "defaultContent": {
+        "title": "Token Utility",
+        "description": "Use cases and utility"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "api",
+      "section_type": "api_docs",
+      "enabled": true,
+      "order_index": 3,
+      "defaultContent": {
+        "title": "API Documentation",
+        "description": "API endpoints and integration guides"
+      },
+      "defaultConfig": {
+        "showCodeExamples": true
+      }
+    },
+    {
+      "section_key": "use_cases",
+      "section_type": "use_cases",
+      "enabled": true,
+      "order_index": 4,
+      "defaultContent": {
+        "title": "Use Cases",
+        "description": "Real-world applications"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "roadmap",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 5,
+      "defaultContent": {
+        "title": "Roadmap",
+        "description": "Project roadmap and milestones"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "team",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 6,
+      "defaultContent": {
+        "title": "Team",
+        "description": "Team members and advisors"
+      },
+      "defaultConfig": {}
+    }
+  ],
+  "game-token": [
+    {
+      "section_key": "overview",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 0,
+      "defaultContent": {
+        "title": "Game Overview",
+        "description": "Game introduction and features"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "gameplay",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 1,
+      "defaultContent": {
+        "title": "Gameplay",
+        "description": "How to play and game mechanics"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "nfts",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 2,
+      "defaultContent": {
+        "title": "NFTs",
+        "description": "In-game NFTs and collectibles"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "rewards",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 3,
+      "defaultContent": {
+        "title": "Rewards",
+        "description": "Token rewards and earning mechanics"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "tokenomics",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 4,
+      "defaultContent": {
+        "title": "Tokenomics",
+        "description": "Token distribution for game"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "roadmap",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 5,
+      "defaultContent": {
+        "title": "Roadmap",
+        "description": "Game development roadmap"
+      },
+      "defaultConfig": {}
+    }
+  ],
+  "defi-token": [
+    {
+      "section_key": "overview",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 0,
+      "defaultContent": {
+        "title": "DeFi Protocol",
+        "description": "Protocol overview"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "features",
+      "section_type": "bento",
+      "enabled": true,
+      "order_index": 1,
+      "defaultContent": {
+        "title": "Features",
+        "description": "Protocol features"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "yield",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 2,
+      "defaultContent": {
+        "title": "Yield Farming",
+        "description": "Yield opportunities"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "tokenomics",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 3,
+      "defaultContent": {
+        "title": "Tokenomics",
+        "description": "Token distribution"
+      },
+      "defaultConfig": {}
+    }
+  ],
+  "nft-token": [
+    {
+      "section_key": "overview",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 0,
+      "defaultContent": {
+        "title": "NFT Collection",
+        "description": "Collection overview"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "collection",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 1,
+      "defaultContent": {
+        "title": "Collection Details",
+        "description": "NFT collection information"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "utility",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 2,
+      "defaultContent": {
+        "title": "NFT Utility",
+        "description": "Benefits and use cases"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "roadmap",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 3,
+      "defaultContent": {
+        "title": "Roadmap",
+        "description": "Collection roadmap"
+      },
+      "defaultConfig": {}
+    }
+  ],
+  "meme-token": [
+    {
+      "section_key": "overview",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 0,
+      "defaultContent": {
+        "title": "Overview",
+        "description": "Meme token introduction"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "tokenomics",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 1,
+      "defaultContent": {
+        "title": "Tokenomics",
+        "description": "Token distribution"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "community",
+      "section_type": "social_proof",
+      "enabled": true,
+      "order_index": 2,
+      "defaultContent": {
+        "title": "Community",
+        "description": "Community links and social proof"
+      },
+      "defaultConfig": {}
+    }
+  ],
+  "custom": [
+    {
+      "section_key": "overview",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 0,
+      "defaultContent": {
+        "title": "Overview",
+        "description": "Project overview"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "tokenomics",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 1,
+      "defaultContent": {
+        "title": "Tokenomics",
+        "description": "Token distribution"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "utility",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 2,
+      "defaultContent": {
+        "title": "Utility",
+        "description": "Token utility"
+      },
+      "defaultConfig": {}
+    },
+    {
+      "section_key": "roadmap",
+      "section_type": "custom",
+      "enabled": true,
+      "order_index": 3,
+      "defaultContent": {
+        "title": "Roadmap",
+        "description": "Project roadmap"
+      },
+      "defaultConfig": {}
+    }
+  ]
+}
+
